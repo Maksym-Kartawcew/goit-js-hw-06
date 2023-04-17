@@ -11,19 +11,25 @@ const destroyButton = controls.querySelector('[data-destroy]');
 const boxes = document.querySelector('#boxes');
 
 function createBoxes(amount) {
-  let boxSize = 30;
-  for (let i = 0; i < amount; i += 1) {
-    const box = document.createElement('div');
-    box.style.width = `${boxSize}px`;
-    box.style.height = `${boxSize}px`;
-    box.style.backgroundColor = getRandomHexColor();
-    boxes.appendChild(box);
-    boxSize += 10;
+  if (amount >= 1 && amount <= 100) {
+    let boxSize = 30;
+    for (let i = 0; i < amount; i += 1) {
+      const box = document.createElement('div');
+      box.style.width = `${boxSize}px`;
+      box.style.height = `${boxSize}px`;
+      box.style.backgroundColor = getRandomHexColor();
+      boxes.appendChild(box);
+      boxSize += 10;
+    }
+     }
+      else {
+    alert('Please enter a number between 1 and 100');
   }
 }
 
 function destroyBoxes() {
   boxes.innerHTML = '';
+  input.value = '';
 }
 
 createButton.addEventListener('click', () => {

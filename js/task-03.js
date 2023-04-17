@@ -19,7 +19,7 @@ const galleryList = document.querySelector(".gallery");
 const galleryItems = images
   .map(
     (image) =>
-      `<li class="gallery-item"><img src="${image.url}" alt="${image.alt}"></li>`
+      `<li class="gallery-item"><img src="${image.url}" alt="${image.alt}" width=400px></li>`
   )
   .join("");
 
@@ -29,5 +29,6 @@ galleryList.style.justifyContent = "space-between";
 galleryList.style.listStyle = "none";
 galleryList.style.padding = "10px";
 galleryList.style.margin = "10px";
+
 
 galleryList.insertAdjacentHTML("beforeend", galleryItems);
